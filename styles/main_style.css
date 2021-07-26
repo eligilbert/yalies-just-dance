@@ -1,0 +1,310 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(/Nunito/Nunito-SemiBold.ttf);
+}
+
+body {
+    font-family: "Nunito";
+    margin: 0;
+    padding-left: 10px;
+    background-color: #4b4099;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-size: 42px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 6px #a582fa solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rebeccapurple;
+    height: 56px;
+    z-index: 2;
+}
+
+#navbar {
+  background-color: #333;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 108%;
+  transition: top 0.3s;
+    z-index: 1;
+}
+
+#navbar p {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+    padding-top: 25px;
+    padding-bottom: 7px;
+  text-decoration: none;
+    margin: 0;
+    width: 31%;
+    font-size: 18px;
+}
+
+#navbar p:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#main-body {
+    margin-top: 110px;
+}
+
+#leaderboard-table {
+    font-size: 20px;
+    width: 90%;
+    margin: 5%;
+    border: 5px solid #a582fa;
+    border-radius: 17px;
+    border-spacing: 0;
+}
+
+.leaderboard-row {
+    margin: 0;
+}
+
+#leaderboard-table-header {
+    background-color: #a582fa;
+    color: #1f1f1f;
+}
+
+.leaderboard-row:hover {
+    background-color: goldenrod;
+}
+
+.ldb-rank {
+    text-align: center;
+    width: 5%;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.ldb-player {
+    text-align: left;
+    display: inline-flex;
+    padding-left: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: relative;
+}
+
+.ldb-player-nick {
+
+}
+
+.ldb-player-full {
+    font-size: 14px;
+    color: lightgray;
+    padding-top: 6px;
+}
+
+.ldb-player-tag {
+    color: blanchedalmond;
+    background-color: mediumpurple;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 0 3px;
+    display: inline-flex;
+}
+
+.player-page-tag {
+    color: blanchedalmond;
+    background-color: mediumpurple;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 0 3px;
+    display: inline-block;
+}
+
+.ldb-player-tag.Creator, .player-page-tag.Creator{
+    background-color: goldenrod;
+}
+
+.ldb-player-tag.Host, .player-page-tag.Host{
+    background-color: crimson;
+}
+
+.ldb-rating {
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#player-page-container {
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    margin-left: 20px;
+}
+
+#player-nickname {
+    font-size: 70px;
+    display: inline-block;
+}
+
+#player-name {
+    color: lightgray;
+    font-size: 28px;
+    display: inline-block;
+}
+
+#player-rating {
+    font-size: 50px;
+    display: inline-block;
+}
+
+.player-page-label {
+    font-size: 28px;
+    color: lightgray;
+    display: inline-block;
+}
+
+#player-tags {
+    display: inline-block;
+}
+
+#submit-game-form {
+    align-content: center;
+    text-align: center;
+}
+
+.gsp-number {
+    border-radius: 50%;
+    width: 40px;
+    line-height: 40px;
+    padding: 8px;
+    text-align: center;
+    font-size: 22px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.gsp-info, .gsp-stars, .gsp-newplayer {
+    display: inline-block;
+}
+
+.gsp-stars, .gsp-newplayer {
+    visibility: hidden;
+}
+
+.gsp-playername {
+    line-height: 30px;
+}
+
+#game-form-container {
+    text-align: center;
+}
+
+.menu-button {
+    font-size: 24px;
+    background-color: deeppink;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 40%;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    margin-bottom: 18px;
+}
+
+.menu-button:hover {
+    background-color: lightpink;
+    color: deeppink;
+}
+
+#playername1, #playername2, #playername3, #playername4, #playername5, #playername6 {
+    font-size: 20px;
+}
+
+#song-input {
+    font-size: 20px;
+    width: 40ch;
+}
+
+#location-input {
+    font-size: 20px;
+    width: 38ch;
+}
+
+.gsp-info {
+    line-height: 30px;
+}
+
+.gms-date {
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.gms-loc {
+    text-align: left;
+    display: inline-flex;
+    padding-left: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: relative;
+}
+
+.gms-song {
+
+}
+
+.gms-place {
+    text-align: center;
+    content-align: center;
+    width: 28px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+#gms-place-header {
+    width: 32px;
+    margin-right: 8px;
+    margin-left: 0;
+}
+
+#games-table {
+    font-size: 20px;
+    width: 90%;
+    margin: 5%;
+    border: 5px solid #a582fa;
+    border-radius: 17px;
+    border-spacing: 0;
+}
+
+#game-song {
+    font-size: 70px;
+    display: inline-block;
+}
+
+#game-location {
+    color: lightgray;
+    font-size: 36px;
+    display: inline-block;
+}
+
+#game-datetime {
+    color: lightgray;
+    font-size: 24px;
+}
+
+#game-page-container {
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    margin-left: 20px;
+}

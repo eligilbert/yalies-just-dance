@@ -1,0 +1,112 @@
+<div id="game-form-container">
+<form id="submit-game-form">
+    <datalist id="songs-list"></datalist>
+    <datalist id="locations-list"></datalist>
+    <datalist id="people-list">
+        <script>
+            populateReportPeopleList();
+        </script>
+    </datalist>
+    <label for="song-input">Song: </label>
+    <input autoComplete="on" list="songs-list" id="song-input"><br><br>
+    <label for="location-input">Location: </label>
+    <input autoComplete="on" list="locations-list" id="location-input"><br><br>
+    <div id="places-container">
+        <div class="game-submit-place">
+            <div class="gsp-number"  style="background-color: #D4AF37">1st</div>
+            <div class="gsp-info">
+                <div class="gsp-newplayer">
+                    <label for="newplayer1">New Player? </label>
+                    <input type="checkbox" id="newplayer1">
+                </div>
+                <div class="gsp-stars">
+                    <label for="stars1">Stars: </label>
+                    <input type="number" id="stars1" min="0" max="5">
+                </div>
+                <div class="gsp-playername">
+                    <label for="playername1">Player: </label>
+                    <input autoComplete="on" list="people-list" id="playername1"/>
+                </div>
+            </div>
+        </div>
+        <div class="game-submit-place">
+            <div class="gsp-number" style="background-color: #C0C0C0">2nd</div>
+            <div class="gsp-info">
+                <div class="gsp-newplayer">
+                    <label for="newplayer2">New Player? </label>
+                    <input type="checkbox" id="newplayer2">
+                </div>
+                <div class="gsp-stars">
+                    <label for="stars4">Stars: </label>
+                    <input type="number" id="stars2" min="0" max="5">
+                </div>
+                <div class="gsp-playername">
+                    <label for="playername2">Player: </label>
+                    <input autoComplete="on" list="people-list" id="playername2"/>
+                </div>
+            </div>
+        </div>
+        <div class="game-submit-place">
+            <div class="gsp-number" style="background-color: #CD7F32">3rd</div>
+            <div class="gsp-info">
+                <div class="gsp-newplayer">
+                    <label for="newplayer3">New Player? </label>
+                    <input type="checkbox" id="newplayer3">
+                </div>
+                <div class="gsp-stars">
+                    <label for="stars3">Stars: </label>
+                    <input type="number" id="stars3" min="0" max="5">
+                </div>
+                <div class="gsp-playername">
+                    <label for="playername3">Player: </label>
+                    <input autoComplete="on" list="people-list" id="playername3"/>
+                </div>
+            </div>
+        </div>
+        <div class="game-submit-place">
+            <div class="gsp-number" style="background-color: #b85a2a">4th</div>
+            <div class="gsp-info">
+                <div class="gsp-newplayer">
+                    <label for="newplayer4">New Player? </label>
+                    <input type="checkbox" id="newplayer4">
+                </div>
+                <div class="gsp-stars">
+                    <label for="stars4">Stars: </label>
+                    <input type="number" id="stars4" min="0" max="5">
+                </div>
+                <div class="gsp-playername">
+                    <label for="playername4">Player: </label>
+                    <input autoComplete="on" list="people-list" id="playername4"/>
+                </div>
+            </div>
+        </div>
+        <div class="game-submit-place">
+            <div class="gsp-number" style="background-color: #542a10">5th</div>
+            <div class="gsp-info">
+                <div class="gsp-newplayer">
+                    <label for="newplayer5">New Player? </label>
+                    <input type="checkbox" id="newplayer5">
+                </div>
+                <div class="gsp-playername">
+                    <label for="playername5">Player: </label>
+                    <input autoComplete="on" list="people-list" id="playername5"/>
+                </div>
+            </div>
+        </div>
+        <div class="game-submit-place">
+            <div class="gsp-number" style="background-color: #000000">6th</div>
+            <div class="gsp-info">
+                <div class="gsp-newplayer">
+                    <label for="newplayer6">New Player? </label>
+                    <input type="checkbox" id="newplayer6">
+                </div>
+                <div class="gsp-playername">
+                    <label for="playername6">Player: </label>
+                    <input autoComplete="on" list="people-list" id="playername6"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<input type="submit" value="Submit" class="menu-button" onclick="submitGame()">
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YaliesJust.Dance</title>
+    <link rel="stylesheet" href="/main_style.css" />
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(function() {
+            $("#header").load("header");
+            showLeaderboard();
+        });
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+    <script>
+        // copied from W3 Schools Tutorial https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "45px";
+            } else {
+                document.getElementById("navbar").style.top = "0";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="main-body"></div>
+</body>
+</html>
