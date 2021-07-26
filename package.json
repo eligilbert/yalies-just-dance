@@ -1,0 +1,20 @@
+{
+  "name": "yaliesjustdance",
+  "version": "1.0.0",
+  "description": "<h1>Yalies Just Dance</h1> A simple and intuitive leaderboard using the Elo  rating system to keep track of my friends'  friendly perpetual competition in Just Dance for the  Nintendo Switch.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "run": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eligilbert/yalies-just-dance.git"
+  },
+  "author": "Eli Gilbert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eligilbert/yalies-just-dance/issues"
+  },
+  "homepage": "https://github.com/eligilbert/yalies-just-dance#readme"
+}
