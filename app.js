@@ -40,10 +40,19 @@ const port = process.env.PORT || 8080;
 serv.listen(port);
 console.log("Server started on port", port);
 
-const pool = mysql.createPool({host:'localhost',
-    user:'root',
-    password:'rootpass',
-    database:'JustDanceDB'});
+let pool = mysql.createPool({
+        host:'us-cdbr-east-04.cleardb.com',
+        user:'b1e900371e10bc',
+        password:'266123c4',
+        database:'heroku_14bc27d717a8b78'});
+if(port === 8080) {
+    pool = mysql.createPool({
+        host:'localhost',
+        user:'root',
+        password:'rootpass',
+        database:'JustDanceDB'});
+}
+
 
 io.sockets.on('connection', function(socket) {
     socket.on('request-leaderboard', function(params) {
