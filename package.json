@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/eligilbert/yalies-just-dance/issues"
   },
-  "homepage": "https://github.com/eligilbert/yalies-just-dance#readme"
+  "homepage": "https://github.com/eligilbert/yalies-just-dance#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "mysql2": "^2.2.5",
+    "socket.io": "^3.1.1"
+  }
 }
