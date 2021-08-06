@@ -7,6 +7,7 @@ function showRecentGames() {
 function setupRecentGames() {
     socket.emit('request-games', null);
     socket.on('return-games', function(data) {
+        socket.off('return-games');
         let games_table = document.getElementById("leaderboard-table");
         games_table.innerHTML =
             "<tr id=\"leaderboard-table-header\" class=\"leaderboard-row\">"+
@@ -22,6 +23,9 @@ function setupRecentGames() {
                 game_data["location"] = "";
             }
             let time = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString() + game_data["date"].substr(13,3);
+            if(time === "0") {
+                time = "12";
+            }
             if((parseInt(game_data["date"].substr(11,2))-4) < 12) {
                 time = time + " AM";
             } else {
@@ -47,6 +51,7 @@ function showLeaderboard() {
 function setupLeaderboard() {
     socket.emit('request-leaderboard', null);
     socket.on('return-leaderboard', function(data) {
+        socket.off('return-leaderboard');
         let leaders_table = document.getElementById("leaderboard-table");
         leaders_table.innerHTML = "<tr id=\"leaderboard-table-header\" class=\"leaderboard-row\">"+
             "<td class=\"ldb-rank\">Rank</td>\n" +
@@ -68,11 +73,13 @@ function setupLeaderboard() {
 
             let tags_container = document.getElementById("player-tags-"+player_data["id"]);
             let tags_raw = player_data["tags"];
-            let tags = tags_raw.split(';');
-            for(let t in tags) {
-                let tag = tags[t];
-                tags_container.innerHTML = tags_container.innerHTML + "&nbsp;" +
-                    "<div class='ldb-player-tag "+tag+"'>"+tag+"</div>";
+            if(tags_raw !== null) {
+                let tags = tags_raw.split(';');
+                for(let t in tags) {
+                    let tag = tags[t];
+                    tags_container.innerHTML = tags_container.innerHTML + "&nbsp;" +
+                        "<div class='ldb-player-tag "+tag+"'>"+tag+"</div>";
+                }
             }
         }
     });
@@ -85,13 +92,6 @@ function openSubmitGame() {
 }
 
 function submitGame() {
-    function getId(data, name) {
-        for(let d in data) {
-            if(data[d]["nickname"]+" ("+data[d]["name"]+")"===name) {
-                return data[d]["id"];
-            }
-        }
-    }
     let player_names = [];
     for(let i in [1, 2, 3, 4, 5, 6]) {
         let j = parseInt(i)+1;
@@ -118,6 +118,7 @@ function setupPlayerProfile() {
     sessionStorage.removeItem('opened_player_id');
     socket.emit('request-player', id);
     socket.on('return-player', function(results) {
+        socket.off('return-player')
         let data = results[0];
         let games = results[1];
         document.getElementById('player-nickname').innerText = data[0]["nickname"];
@@ -126,11 +127,13 @@ function setupPlayerProfile() {
         let tags_container = document.getElementById("player-tags");
         tags_container.innerHTML = "";
         let tags_raw = data[0]["tags"];
-        let tags = tags_raw.split(';');
-        for(let t in tags) {
-            let tag = tags[t];
-            tags_container.innerHTML = tags_container.innerHTML + "&nbsp;" +
-                "<div class='player-page-tag "+tag+"'>"+tag+"</div>";
+        if(tags_raw !== null) {
+            let tags = tags_raw.split(';');
+            for(let t in tags) {
+                let tag = tags[t];
+                tags_container.innerHTML = tags_container.innerHTML + "&nbsp;" +
+                    "<div class='player-page-tag "+tag+"'>"+tag+"</div>";
+            }
         }
         let games_table = document.getElementById("leaderboard-table");
         games_table.innerHTML =
@@ -179,6 +182,7 @@ function setupPlayerProfile() {
 function populateReportPeopleList() {
     socket.emit('request-people-list');
     socket.on('return-people-list', function(data) {
+        socket.off('return-people-list');
         let players_list = document.getElementById('people-list');
         players_list.innerHTML = "";
         for(let d in data) {
@@ -188,6 +192,7 @@ function populateReportPeopleList() {
     });
     socket.emit('request-songs-list');
     socket.on('return-songs-list', function(data) {
+        socket.off('return-songs-list');
         let songs_list = document.getElementById('songs-list');
         songs_list.innerHTML = "";
         for(let d in data) {
@@ -196,6 +201,7 @@ function populateReportPeopleList() {
         }
     });
     socket.on('return-locations-list', function(data) {
+        socket.off('return-locations-list');
         let locations_list = document.getElementById('locations-list');
         locations_list.innerHTML = "";
         for(let d in data) {
@@ -215,6 +221,7 @@ function setupGamePage() {
     sessionStorage.removeItem('opened_game_id');
     socket.emit('request-game', id);
     socket.on('return-game', function(data, players) {
+        socket.off('return-game');
         let game_data = data[0];
         if(game_data["song"] === "" || game_data["song"] === '') {
             document.getElementById('game-song').innerText = "[Song Not Reported]"
@@ -261,11 +268,13 @@ function setupGameLeaderboard(data) {
 
             let tags_container = document.getElementById("player-tags-" + player_data["id"]);
             let tags_raw = player_data["tags"];
-            let tags = tags_raw.split(';');
-            for (let t in tags) {
-                let tag = tags[t];
-                tags_container.innerHTML = tags_container.innerHTML + "&nbsp;" +
-                    "<div class='ldb-player-tag " + tag + "'>" + tag + "</div>";
+            if(tags_raw !== null) {
+                let tags = tags_raw.split(';');
+                for (let t in tags) {
+                    let tag = tags[t];
+                    tags_container.innerHTML = tags_container.innerHTML + "&nbsp;" +
+                        "<div class='ldb-player-tag " + tag + "'>" + tag + "</div>";
+                }
             }
         }
     }

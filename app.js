@@ -104,19 +104,39 @@ io.sockets.on('connection', function(socket) {
         let query = "SELECT * FROM users";
         pool.query(query, function(err, results, fields) {
             let winner = "";
-            function getPlayer(data, name) {
+            function getPlayer(data, name, id_if_new) {
                 for(let d in data) {
                     if(data[d]["nickname"]+" ("+data[d]["name"]+")"===name) {
                         if(winner === "") {
                             winner = data[d]["nickname"];
                         }
+                        data[d]["new"] = false;
                         return data[d];
                     }
                 }
+                let newplayer_data = {
+                    "nickname": "",
+                    "name": "Full Name Unknown!",
+                    "rating": 1000,
+                    "id":  id_if_new,
+                    "new": true
+                };
+                if(name.includes("(") && name.includes(")")) {
+                    const split_names = name.split("(");
+                    newplayer_data["nickname"] = split_names[0];
+                    newplayer_data["name"] = split_names[1].substr(0, split_names[1].length - 1);
+                } else {
+                    newplayer_data["nickname"] = name;
+                }
+                pool.query("INSERT INTO users (nickname, name, rating) VALUES ('" + newplayer_data["nickname"] + "', '" + newplayer_data["name"] + "', " + newplayer_data["rating"].toString() + ");");
+                return newplayer_data;
             }
+            let max_id = results.length;
             let players_data = [];
             for(let p in players) {
-                players_data.push(getPlayer(results, players[p]));
+                let player_info = getPlayer(results, players[p], max_id + 1);
+                if(player_info["new"]) max_id++;
+                players_data.push(player_info);
             }
             function getNewRating(player, all_players) {
                 let old_rating = player["rating"];
