@@ -123,21 +123,26 @@ io.sockets.on('connection', function(socket) {
                 };
                 if(name.includes("(") && name.includes(")")) {
                     const split_names = name.split("(");
-                    newplayer_data["nickname"] = split_names[0];
+                    newplayer_data["nickname"] = split_names[0].substr(0, split_names[0].length - 1);
                     newplayer_data["name"] = split_names[1].substr(0, split_names[1].length - 1);
                 } else {
                     newplayer_data["nickname"] = name;
+                }
+                if(winner === "") {
+                    winner = newplayer_data["nickname"];
                 }
                 pool.query("INSERT INTO users (id, nickname, name, rating) VALUES (" + newplayer_data["id"].toString() + ", '" + newplayer_data["nickname"] + "', '" + newplayer_data["name"] + "', " + newplayer_data["rating"].toString() + ");");
                 return newplayer_data;
             }
             let max_id = results.length;
             let players_data = [];
+            console.log(players);
             for(let p in players) {
                 let player_info = getPlayer(results, players[p], max_id + 1);
                 if(player_info["new"]) max_id++;
                 players_data.push(player_info);
             }
+            console.log(players_data);
             function getNewRating(player, all_players) {
                 let old_rating = player["rating"];
                 let new_rating = player["rating"];
@@ -145,9 +150,9 @@ io.sockets.on('connection', function(socket) {
                 for(let p in all_players) {
                     if(all_players[p]["id"]!==player["id"]) {
                         let b_rating = all_players[p]["rating"];
-                        let expected_score = 1/(1+10^((b_rating-old_rating)/400));
+                        let expected_score = 1/(1+10^(Math.abs(b_rating-old_rating)/400));
                         let K = 20;
-                        let rating_change = K * (passed_self - expected_score);
+                        let rating_change = K * (1 - expected_score) * ((-1) ** (passed_self + 1));
                         new_rating = new_rating + rating_change;
                     } else {
                         passed_self = 1;
