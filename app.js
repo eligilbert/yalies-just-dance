@@ -128,7 +128,7 @@ io.sockets.on('connection', function(socket) {
                 } else {
                     newplayer_data["nickname"] = name;
                 }
-                pool.query("INSERT INTO users (nickname, name, rating) VALUES ('" + newplayer_data["nickname"] + "', '" + newplayer_data["name"] + "', " + newplayer_data["rating"].toString() + ");");
+                pool.query("INSERT INTO users (id, nickname, name, rating) VALUES (" + newplayer_data["id"].toString() + ", '" + newplayer_data["nickname"] + "', '" + newplayer_data["name"] + "', " + newplayer_data["rating"].toString() + ");");
                 return newplayer_data;
             }
             let max_id = results.length;
