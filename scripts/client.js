@@ -22,10 +22,11 @@ function setupRecentGames() {
             if(game_data["location"] === null) {
                 game_data["location"] = "";
             }
-            let time = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString() + game_data["date"].substr(13,3);
-            if(time === "0") {
-                time = "12";
+            let hour = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString();
+            if(hour === "0") {
+                hour = "12";
             }
+            let time = hour + game_data["date"].substr(13,3);
             if((parseInt(game_data["date"].substr(11,2))-4) < 12) {
                 time = time + " AM";
             } else {
@@ -151,7 +152,11 @@ function setupPlayerProfile() {
             if(game_data["location"] === null) {
                 game_data["location"] = "";
             }
-            let time = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString() + game_data["date"].substr(13,3);
+            let hour = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString();
+            if(hour === "0") {
+                hour = "12";
+            }
+            let time = hour + game_data["date"].substr(13,3);
             if((parseInt(game_data["date"].substr(11,2))-4) < 12) {
                 time = time + " AM";
             } else {
@@ -233,7 +238,11 @@ function setupGamePage() {
         } else {
             document.getElementById('game-location').innerText = game_data["location"];
         }
-        let time = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString() + game_data["date"].substr(13,3);
+        let hour = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString();
+        if(hour === "0") {
+            hour = "12";
+        }
+        let time = hour + game_data["date"].substr(13,3);
         if((parseInt(game_data["date"].substr(11,2))-4) < 12) {
             time = time + " AM";
         } else {

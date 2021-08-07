@@ -136,13 +136,13 @@ io.sockets.on('connection', function(socket) {
             }
             let max_id = results.length;
             let players_data = [];
-            console.log(players);
+            // console.log(players);
             for(let p in players) {
                 let player_info = getPlayer(results, players[p], max_id + 1);
                 if(player_info["new"]) max_id++;
                 players_data.push(player_info);
             }
-            console.log(players_data);
+            // console.log(players_data);
             function getNewRating(player, all_players) {
                 let old_rating = player["rating"];
                 let new_rating = player["rating"];
