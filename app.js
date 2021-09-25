@@ -116,7 +116,7 @@ io.sockets.on('connection', function(socket) {
                 }
                 let newplayer_data = {
                     "nickname": "",
-                    "name": "Full Name Unknown!",
+                    "name": "[Name Unknown]",
                     "rating": 1000,
                     "id":  id_if_new,
                     "new": true
@@ -150,9 +150,9 @@ io.sockets.on('connection', function(socket) {
                 for(let p in all_players) {
                     if(all_players[p]["id"]!==player["id"]) {
                         let b_rating = all_players[p]["rating"];
-                        let expected_score = 1/(1+10^(Math.abs(b_rating-old_rating)/400));
+                        let expected_score = 1/(1+10 ** ((b_rating-old_rating)/400));
                         let K = 20;
-                        let rating_change = K * (1 - expected_score) * ((-1) ** (passed_self + 1));
+                        let rating_change = K * (passed_self - expected_score);
                         new_rating = new_rating + rating_change;
                     } else {
                         passed_self = 1;
