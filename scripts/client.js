@@ -22,12 +22,12 @@ function setupRecentGames() {
             if(game_data["location"] === null) {
                 game_data["location"] = "";
             }
-            let hour = ((parseInt(game_data["date"].substr(11,2))-4)%12).toString();
+            let hour = ((parseInt(game_data["date"].substr(11,2))+8)%12).toString();
             if(hour === "0") {
                 hour = "12";
             }
             let time = hour + game_data["date"].substr(13,3);
-            if((parseInt(game_data["date"].substr(11,2))-4) < 12) {
+            if(0 < (parseInt(game_data["date"].substr(11,2))-4) && (parseInt(game_data["date"].substr(11,2))-4) < 12) {
                 time = time + " AM";
             } else {
                 time = time + " PM";
