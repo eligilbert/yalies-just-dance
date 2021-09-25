@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbd63df7-c699-4dfb-a53a-4e9e4b9568f0" name="Default Changelist" comment="fix">
+    <list default="true" id="bbd63df7-c699-4dfb-a53a-4e9e4b9568f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+            <state relative-caret-position="196">
+              <caret line="71" column="15" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state relative-caret-position="138">
+              <caret line="242" column="24" lean-forward="true" selection-start-line="242" selection-start-column="24" selection-end-line="242" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
@@ -110,7 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NEW PLA</find>
       <find>request-game</find>
       <find>newplayer</find>
       <find>gsp-playername</find>
@@ -140,6 +139,7 @@
       <find>console.</find>
       <find>Full na</find>
       <find>leaderboard</find>
+      <find>setupGame</find>
     </findStrings>
     <replaceStrings>
       <replace>Player:</replace>
@@ -169,8 +169,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/views/report.html" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/scripts/client.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -283,7 +283,7 @@
       <workItem from="1628276444179" duration="8784000" />
       <workItem from="1630334139932" duration="16000" />
       <workItem from="1632525984543" duration="2598000" />
-      <workItem from="1632582018696" duration="424000" />
+      <workItem from="1632582018696" duration="964000" />
     </task>
     <task id="LOCAL-00001" summary="new player working">
       <created>1628281555423</created>
@@ -320,17 +320,31 @@
       <option name="project" value="LOCAL" />
       <updated>1632528823180</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix time stamps">
+      <created>1632582528440</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632582528440</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix time stamps (2)">
+      <created>1632582811533</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632582811533</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61719000" />
+    <option name="totallyTimeSpent" value="62259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="171" y="93" width="1425" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34250543" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34250543" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -344,7 +358,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.37362638" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.37362638" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -361,7 +375,9 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="12:00 not 0:00 bug fix and no extraneous app.js prints" />
     <MESSAGE value="fixed ranking algorithm finally" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed ranking algorithm finally" />
+    <MESSAGE value="fix time stamps" />
+    <MESSAGE value="fix time stamps (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix time stamps (2)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/views/header.html">
@@ -415,13 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -470,8 +479,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        <state relative-caret-position="138">
+          <caret line="242" column="24" lean-forward="true" selection-start-line="242" selection-start-column="24" selection-end-line="242" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
@@ -482,6 +491,13 @@
             <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
             <element signature="e#0#6#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="71" column="15" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
         </state>
       </provider>
     </entry>

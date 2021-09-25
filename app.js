@@ -66,7 +66,7 @@ io.sockets.on('connection', function(socket) {
     socket.on('request-player', function(id) {
         let query = "SELECT * FROM users WHERE id="+id+"";
         pool.query(query, function(err, results, fields) {
-            let query2 = "SELECT * FROM games WHERE players REGEXP '^"+id+"' OR players REGEXP ';"+id+";' ORDER BY date DESC;";
+            let query2 = "SELECT * FROM games WHERE players REGEXP '^"+id+";' OR players REGEXP ';"+id+";' ORDER BY date DESC;";
             pool.query(query2, function(e, r, f) {
                socket.emit('return-player', [results, r]);
             });
