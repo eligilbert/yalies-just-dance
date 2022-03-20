@@ -3,3 +3,5 @@ A simple and intuitive leaderboard using the Elo
 rating system to keep track of my friends' 
 friendly perpetual competition in Just Dance for the 
 Nintendo Switch. 
+
+<a href="yalies-just-dance.herokuapp.com">yalies-just-dance.herokuapp.com</a>
